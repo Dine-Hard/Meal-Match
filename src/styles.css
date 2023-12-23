@@ -1,6 +1,7 @@
 h1 {
     color: burlywood;
-    background-color: ;
+    -webkit-text-stroke-width: .05rem;
+    -webkit-text-stroke-color: aquamarine;
   }
 
 body {
