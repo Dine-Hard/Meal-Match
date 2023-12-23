@@ -7,7 +7,8 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "start": "webpack serve --hot --open --mode development"
+    "start": "webpack serve --hot --open --mode development",
+    "dev": "nodemon dist/server.js --open"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.1"
