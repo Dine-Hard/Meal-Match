@@ -1,5 +1,5 @@
 // Import any necessary modules or dependencies
-const db = require('../models/Models');
+const db = require('..Models.js');
 
 // Create a controller object
 const controller = {};
