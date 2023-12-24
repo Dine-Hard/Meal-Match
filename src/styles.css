@@ -1,0 +1,24 @@
+h1 {
+    color: burlywood;
+    -webkit-text-stroke-width: .05rem;
+    -webkit-text-stroke-color: aquamarine;
+  }
+
+body {
+  background-color: mintcream;
+  }
+
+  #listContainer {
+    border: 1px solid blueviolet;
+    display: block;
+
+  }
+
+li {
+  display: inline-flex;
+}
+
+input {
+  display: flexbox;
+  color: red;
+}
