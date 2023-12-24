@@ -3,7 +3,7 @@ const { Pool } = require("pg");
 
 // Define the connection string for the PostgreSQL database
 const PG_URI =
-  "postgres://govugcll:MbIDghe3yII_jK7lbLMN-Ro-xx4dOuu6@mahmud.db.elephantsql.com/govugcll";
+  "postgres://sopkxkah:v7gFvfH8y1xqnEOlsCNqR4pEZ_cRUTiA@mahmud.db.elephantsql.com/sopkxkah";
 
 // Create a new instance of the Pool class with the connection string
 const pool = new Pool({
@@ -13,6 +13,7 @@ const pool = new Pool({
 // Export the pool object to be used in other modules
 module.exports = {
   query: (text, params, callback) => {
+    console.log("Executed query:", text);
     // Fix the syntax error by defining query as a function
     return pool.query(text, params, callback);
   },
