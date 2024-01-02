@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FoodOption(props){
     // deconctruct the props
-    const { value, voteFunc } = props;
+    const { value, voteFunc, currVote } = props;
 
     // declare state var to tell if this box is checked
     const [isChecked, setIsChecked] = useState(false);
@@ -12,20 +12,24 @@ export default function FoodOption(props){
     const handleCheck = (e) => {
        setIsChecked(!isChecked);
         // if it was not checked, tell the parent element it is checked now
-       if(!isChecked) voteFunc(value);
+       if(!isChecked){
+        voteFunc(value)
+       } else {
+        voteFunc('nobody yet');
+       }
    }
 
     return (
         <div className="foodOption">
             <input type="checkbox"
                 key={value}
-                checked={isChecked}  
+                checked={isChecked}
                 onChange={handleCheck}
             />
             
                 {value}
 
-            <h5>{isChecked ? "yes it is checked" : "no it is not checked"}</h5>
+            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5>
 
             </div>
     )

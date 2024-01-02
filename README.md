@@ -12,4 +12,6 @@ Outstanding challenges:
 
 but we're getting an error
 
-- insert ER Diagram photo
+This is what we were planning on building. As of now, we only have the table Cuisines.
+
+![ER Diagram](src/images/schema.png)
