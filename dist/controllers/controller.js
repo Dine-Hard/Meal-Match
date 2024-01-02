@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../dist/Models/Models.js');
 
+
 // Create a controller object
 const controller = {};
 
@@ -18,9 +19,9 @@ controller.getCusines = async (req, res, next) => {
 }
 
 // Define your controller methods
-// controller.methodName = (req, res) => {
-//   // Code logic goes here
-// };
+controller.methodName = (req, res) => {
+  // Code logic goes here
+};
 
 // Export the controller object
 module.exports = controller;
