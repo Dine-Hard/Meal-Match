@@ -14,7 +14,7 @@ function ListContainer() {
     const [tallyData, setTallyData] = useState(null);
 
     const fetchData = async () => {
-        const response = await fetch('VOTE DATA FROM BACKEND!');
+        const response = await fetch('http://localhost:3000/api');
         const data = await response.json();
         setTallyData(data);
     };
@@ -24,6 +24,7 @@ function ListContainer() {
         if(selection !== 'nobody yet'){
             tally[selection] = tally[selection] + 1;
             setTallyData({...tally});
+            // fetchData(); UNCOMMENT AFTER ACTUALLY BEING ABLE TO FETCH DATA
         };
     };
 
@@ -40,7 +41,7 @@ function ListContainer() {
                 {tallyData && (
                     <div>
                         <h2>Current Tally:</h2>
-                        <ul>
+                        <ul className='list'>
                             {options.map(option => (
                                 <li className="tallyList" key={option}>
                                     {option}: {tallyData[option]}
