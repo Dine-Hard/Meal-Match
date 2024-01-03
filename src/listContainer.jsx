@@ -14,7 +14,7 @@ function ListContainer() {
 
     // options array holds food option strings -- will come from db eventually
         // NOTE: add another prop for each option--id--and state var checkedBoxId so that only one box can be checked at a time
-    const options = ['italian', 'mexican', 'thai', 'korean'];
+    const options = ['Italian', 'Mexican', 'Thai', 'Korean'];
 
     // populate tally obj -- won't be necessary when data comes from db
         // currently this just logs to browser console
