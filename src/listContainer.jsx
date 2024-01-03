@@ -66,11 +66,11 @@ function ListContainer() {
 
     return (
 
-            <div id="listContainer">
+            <div>
 
                 {list}
 
-            <h1>you voted for: {vote}</h1>
+            {/* <h1>you voted for: {vote}</h1> */}
             
             {tallyPrint}
 
