@@ -5,7 +5,6 @@ import ListContainer from "./listContainer";
 // main app component holds the logo and the list container component
 
 function App(){
-  render() {
     return (
       <div className='body'>
           <h1 className='header'>
@@ -16,7 +15,6 @@ function App(){
         </div>
       </div>
     );
-  };
 };
 
 export default App;
