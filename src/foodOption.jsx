@@ -10,9 +10,9 @@ export default function FoodOption(props){
     // event handler for when a box is checked
         // update isChecked value
     const handleCheck = (e) => {
-       setIsChecked(!isChecked);
+       setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
-       if(!isChecked){
+       if(e.target.checked){
         voteFunc(value)
        }
    }
