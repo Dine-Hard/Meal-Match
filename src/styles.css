@@ -9,13 +9,17 @@
   border-radius: 2em;
   border-style: solid;
   text-align: center;
+  font-family: Cute Font;
 }
 
 h1 {
     color: rgb(0, 0, 0);
     -webkit-text-stroke-width: .05rem;
-
   }
+
+h4 {
+  font-size: 25px;
+}
 
 h5 {
   margin-left: 1.5em;
@@ -50,6 +54,8 @@ input {
 }
 
 .optionsContainer {
+  display: flex;
+  justify-content: flex-start;
   background-color: rgba(255, 255, 255, 0.95);
   background-image: url('https://i.giphy.com/0KiLnOipDAnfk5Jgsf.webp');
   background-repeat: no-repeat;
@@ -61,4 +67,44 @@ input {
   border-radius: 2em;
   border-style: solid;
   margin-top: 1em;
+  font-family: Cute Font;
 }
+
+.foodOption {
+  font-size: 40px;
+}
+
+.box {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:checked {
+  background-color: rgba(116, 202, 120, 0.95);
+  border-color: rgba(116, 202, 120, 0.95);
+}
+
+.box:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(116, 202, 120, 0.95);
+}
+
+
+
+
+
+
