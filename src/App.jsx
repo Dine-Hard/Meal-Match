@@ -4,7 +4,7 @@ import ListContainer from "./listContainer";
 
 // main app component holds the logo and the list container component
 
-class App extends React.Component {
+function App(){
   render() {
     return (
       <div className='body'>
@@ -19,4 +19,4 @@ class App extends React.Component {
   };
 };
 
-export default hot(App);
+export default App;
