@@ -12,6 +12,11 @@
   font-family: Cute Font;
 }
 
+@font-face {
+  font-family: 'Cute Font';
+  src: url(https://fonts.googleapis.com/css?family=Cute+Font);
+}
+
 h1 {
     color: rgb(0, 0, 0);
     -webkit-text-stroke-width: .05rem;
@@ -70,6 +75,7 @@ input {
   font-family: Cute Font;
 }
 
+
 .foodOption {
   font-size: 40px;
 }
@@ -103,7 +109,9 @@ input {
   background-color: rgba(116, 202, 120, 0.95);
 }
 
-
+.tallyList {
+  font-size: 40px;
+}
 
 
 

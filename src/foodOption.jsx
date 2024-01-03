@@ -14,8 +14,6 @@ export default function FoodOption(props){
         // if it was not checked, tell the parent element it is checked now
        if(!isChecked){
         voteFunc(value)
-       } else {
-        voteFunc('nobody yet');
        }
    }
 
@@ -24,7 +22,7 @@ export default function FoodOption(props){
             <input className="box"
                 type="checkbox"
                 key={value}
-                checked={isChecked}
+                checked={currVote === value}
                 onChange={handleCheck}
             />
 
