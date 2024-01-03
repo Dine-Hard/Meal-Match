@@ -21,15 +21,17 @@ export default function FoodOption(props){
 
     return (
         <div className="foodOption">
-            <input type="checkbox"
+            <input className="box"
+                type="checkbox"
                 key={value}
                 checked={isChecked}
                 onChange={handleCheck}
             />
+
             
                 {value}
-
-            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5>
+{/* 
+            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5> */}
 
             </div>
     )
