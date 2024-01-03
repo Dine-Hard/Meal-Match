@@ -3,7 +3,8 @@ const { Pool } = require("pg");
 
 // Define the connection string for the PostgreSQL database
 const PG_URI =
-  "postgres://kakcbadn:1FH_y5f7Cb7pv17DfC9AhXmA2MEGA_Si@mahmud.db.elephantsql.com/kakcbadn";
+    "postgres://auwlsjnw:NqLFukBiopVHUqPo9f5RyAQBxleWE_YY@mahmud.db.elephantsql.com/auwlsjnw"
+  // "postgres://sopkxkah:v7gFvfH8y1xqnEOlsCNqR4pEZ_cRUTiA@mahmud.db.elephantsql.com/sopkxkah";
 
 // Create a new instance of the Pool class with the connection string
 const pool = new Pool({
