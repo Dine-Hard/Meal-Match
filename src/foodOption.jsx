@@ -21,7 +21,7 @@ export default function FoodOption(props){
 //        }
 //    }
 
-    const handleCheck = async (e) => {
+    const handleCheck =  (e) => {
        setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
        if(e.target.checked){
@@ -40,6 +40,7 @@ export default function FoodOption(props){
     //     }
        }
    }
+
 
     return (
         <div className="foodOption">

@@ -10,10 +10,8 @@ const controller = {};
 controller.getCuisines = async (req, res, next) => {
     try {
         // const result = await db.query('SELECT user_id FROM users')
-        const text = `INSERT INTO users (name) VALUES ($1) RETURNING *;`;
-        const params = [ req.body.name ]
-        console.log('this is req.body: ', req.body)
-        const result = await db.query(text, params);
+        const text = `SELECT cuisine FROM cuisines`;
+        const result = await db.query(text);
         res.locals.cuisines = result.rows[0];
         console.log(res.locals.cuisines)
         return next();
@@ -22,6 +20,50 @@ controller.getCuisines = async (req, res, next) => {
         return next(err);
     } 
 }
+
+controller.getPeople = async (req,res,next) => {
+    try {
+        const text = `SELECT name FROM users`;
+        const result = await db.query(text);
+        res.locals.people = result.rows;
+        console.log(res.locals.people)
+        return next();
+    } catch(err) {
+        console.log('error on getPeople middleware');
+        return next(err);
+    }
+}
+
+
+controller.addPeople = async (req, res, next) => {
+    const { name } = req.body;
+    try {
+     const text = `INSERT INTO users (name) VALUES ($1)`
+     const params = [ name ];
+     await db.query(text, params);
+     res.locals.addPeople = 'Successfully added Person'   
+     return next();
+    } catch (err) {
+        console.log('error in addPeople middleware');
+        return next(err)
+    }
+}
+
+controller.addCuisines = async (req, res, next) => {
+    const { cuisine } = req.body;
+    try {
+        const text = `INSERT INTO cuisines (cuisine) VALUES ($1)`
+        const params = [ cuisine ]
+        await db.query(text, params);
+        res.locals.addedCuisines = 'Successfully added'
+        return next();
+    } catch(err) {
+        console.log('error in addCuisines');
+        return next(err)
+    }
+}
+
+
 
 // Define your controller methods
 controller.methodName = (req, res) => {
