@@ -21,24 +21,24 @@ export default function FoodOption(props){
 //        }
 //    }
 
-    const handleCheck =  (e) => {
+    const handleCheck = (e) => {
        setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
        if(e.target.checked){
-        upvoteFunc(value)
-    //     try {
-    //             await fetch('http://localhost:3000/api', {
-    //             mode: 'no-cors',
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({name:'what'})
-    //         })
-    //     }catch(error) {
-    //         console.log('error')
-    //     }
-       }
+        upvoteFunc(value);
+        
+        fetch('http://localhost:3000/api/cuisines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cuisine: 'bellobello' }),
+    })
+        .then((data) => data.json())
+        .then((data) => console.log('data:', data))
+        .catch((error) => {
+        console.log('error when posting cuisine to db', error);
+        });
+    };
+
    }
 
 

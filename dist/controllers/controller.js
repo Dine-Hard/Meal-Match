@@ -12,7 +12,7 @@ controller.getCuisines = async (req, res, next) => {
         // const result = await db.query('SELECT user_id FROM users')
         const text = `SELECT cuisine FROM cuisines`;
         const result = await db.query(text);
-        res.locals.cuisines = result.rows[0];
+        res.locals.cuisines = result.rows;
         console.log(res.locals.cuisines)
         return next();
     } catch (err) {
@@ -38,7 +38,7 @@ controller.getPeople = async (req,res,next) => {
 controller.addPeople = async (req, res, next) => {
     const { name } = req.body;
     try {
-     const text = `INSERT INTO users (name) VALUES ($1)`
+     const text = `INSERT INTO users (name) VALUES ($1)`;
      const params = [ name ];
      await db.query(text, params);
      res.locals.addPeople = 'Successfully added Person'   
@@ -47,9 +47,22 @@ controller.addPeople = async (req, res, next) => {
         console.log('error in addPeople middleware');
         return next(err)
     }
+    // console.log('params:', params);
+    // db.query(text, params)
+    // .then((data) => {
+    //     console.log('data:', data);
+    //     res.locals.people = data
+    // })
+    // .then(() => next())
+    // .catch((err) => {
+    //     console.log('error cause in addPeople middleware');
+    //     return next(err);
+    // })
+
 }
 
 controller.addCuisines = async (req, res, next) => {
+    console.log('req.body:', req.body);
     const { cuisine } = req.body;
     try {
         const text = `INSERT INTO cuisines (cuisine) VALUES ($1)`

@@ -19,22 +19,7 @@ function ListContainer() {
         setTallyData(data);
     };
 
-    const upvoteFunc = async (selection) => {
-        try {
-            await fetch('http://localhost:3000/api', {
-                mode: 'no-cors',
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json'
-                },
-                body: JSON.stringify({name:'KingDANG'})
-            });
-            if (response.ok) {
-                console.log('added to db')
-            }
-        }catch (error){
-            console.log('Error in upvoteFunc ', error)
-        };
+    const upvoteFunc = (selection) => {
         setVote(selection);
         if(selection !== 'nobody yet'){
             tally[selection] = tally[selection] + 1;
