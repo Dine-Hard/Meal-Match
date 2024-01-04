@@ -49,7 +49,7 @@ function ListContainer() {
         if(selection !== 'nobody yet'){
             tally[selection] = tally[selection] + 1;
             setTallyData({...tally});
-            // fetchData(); 
+            fetchData(); 
             //UNCOMMENT AFTER ACTUALLY BEING ABLE TO FETCH DATA
         };
     };
