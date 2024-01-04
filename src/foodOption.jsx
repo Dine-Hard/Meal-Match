@@ -21,24 +21,46 @@ export default function FoodOption(props){
 //        }
 //    }
 
-    const handleCheck = async (e) => {
+
+    const handleCheck = (e) => {
        setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
        if(e.target.checked){
-        upvoteFunc(value)
-        try {
-                await fetch('http://localhost:3000/api/cuisines', {
-                mode: 'no-cors',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({name:'what'})
-            })
-        }catch(error) {
-            console.log('error')
-        }
-       }
+        upvoteFunc(value);
+        
+        fetch('http://localhost:3000/api/cuisines', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cuisine: value }),
+        //value being passed in is the cuisine that the user selects from UI (ie. Japanese, Mexican, Thai, Korean, etc.)
+    })
+        .then((data) => data.json())
+        .then((data) => console.log('data:', data))
+        .catch((error) => {
+        console.log('error when posting cuisine to db', error);
+        });
+    };
+
+// =======
+//     const handleCheck = async (e) => {
+//        setIsChecked(e.target.checked);
+//         // if it was not checked, tell the parent element it is checked now
+//        if(e.target.checked){
+//         upvoteFunc(value)
+//         try {
+//                 await fetch('http://localhost:3000/api/cuisines', {
+//                 mode: 'no-cors',
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({name:'what'})
+//             })
+//         }catch(error) {
+//             console.log('error')
+//         }
+//        }
+// >>>>>>> Dev
    }
 
 

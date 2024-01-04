@@ -4,7 +4,7 @@ import FoodOption from "./foodOption";
 
 function ListContainer() {
     const tally = {};
-    const options = ['Italian', 'Mexican', 'Thai', 'Korean'];
+    const options = ['Japanese', 'Mexican', 'Thai', 'Korean'];
 
     options.forEach(el => 
         tally[el] = 0
@@ -28,6 +28,7 @@ function ListContainer() {
             console.log('Error in the fetchData function in listContainer')
         }
     };
+
 
     const upvoteFunc = async (selection) => {
         // try {

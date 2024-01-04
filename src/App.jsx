@@ -4,8 +4,7 @@ import Name from "./Name"
 
 // main app component holds the logo and the list container component
 
-class App extends React.Component {
-  render() {
+function App(){
     return (
       <div className='body'>
           <h1 className='header'>
@@ -19,7 +18,6 @@ class App extends React.Component {
         </div>
       </div>
     );
-  };
 };
 
 export default App;
