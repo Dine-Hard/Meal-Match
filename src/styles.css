@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: auto;
 }
   /* #listContainer {
     border: 1px solid rgb(255, 255, 255);

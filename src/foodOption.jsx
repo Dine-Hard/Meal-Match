@@ -25,12 +25,7 @@ export default function FoodOption(props){
                 checked={currVote === value}
                 onChange={handleCheck}
             />
-
-            
-                {value}
-{/* 
-            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5> */}
-
-            </div>
+            {value}
+        </div>
     )
 }
