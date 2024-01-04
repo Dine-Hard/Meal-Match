@@ -12,6 +12,11 @@
   font-family: Cute Font;
 }
 
+@font-face {
+  font-family: 'Cute Font';
+  src: url(https://fonts.googleapis.com/css?family=Cute+Font);
+}
+
 h1 {
     color: rgb(0, 0, 0);
     -webkit-text-stroke-width: .05rem;
@@ -30,8 +35,9 @@ body {
   /* background-image: url('https://i.giphy.com/3o7btUDtnx3gTwIlmo.webp'); */
   background-image: url('https://static.vecteezy.com/system/resources/previews/003/485/651/non_2x/fast-food-junk-food-elements-background-vector.jpg');
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
   /* #listContainer {
     border: 1px solid rgb(255, 255, 255);
@@ -70,6 +76,7 @@ input {
   font-family: Cute Font;
 }
 
+
 .foodOption {
   font-size: 40px;
 }
@@ -88,23 +95,13 @@ input {
 
 .box:checked {
   background-color: rgba(116, 202, 120, 0.95);
-  border-color: rgba(116, 202, 120, 0.95);
+  border-color: black
 }
 
-.box:checked::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: rgba(116, 202, 120, 0.95);
+.list {
+  list-style: none;
+  counter-reset: my-counter;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
 }
-
-
-
-
-
-

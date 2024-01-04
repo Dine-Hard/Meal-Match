@@ -1,41 +1,28 @@
 // Import any necessary modules or dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../dist/Models/Models.js');
+const db = require('../Models/Models');
 
 
 // Create a controller object
 const controller = {};
 
-// controller.getCusines = async (req, res, next) => {
-//     try {
-//         res.locals = await db.query('SELECT Cuisine FROM Cuisines')
-//     } catch (err) {
-//         console.log('error here');
-//         return next(err);
-//     } finally {
-//         next();
-//     }
-// }
-
-//testing if data gets inserted into db
-controller.addUser = (req, res, next) => {
-    const text =
-        'INSERT INTO user (name)'
-        'VALUES ($1) RETURNING *';
-    const values = [
-
-    ]
+controller.getCuisines = async (req, res, next) => {
+    try {
+        // const result = await db.query('SELECT user_id FROM users')
+        const text = `INSERT INTO users (name) VALUES ($1) RETURNING *;`;
+        const params = [ req.body.name ]
+        console.log('this is req.body: ', req.body)
+        const result = await db.query(text, params);
+        res.locals.cuisines = result.rows[0];
+        console.log(res.locals.cuisines)
+        return next();
+    } catch (err) {
+        console.log('error occurred in getCuisines');
+        return next(err);
+    } 
 }
 
-controller.addCuisine = (req, res, next) => {
-    const text =
-        'INSERT INTO cuisines (cuisine)'
-        'VALUES ($1) RETURNING *';
-    const values = [
-
-    ]
-}
 // Define your controller methods
 controller.methodName = (req, res) => {
   // Code logic goes here
