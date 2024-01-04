@@ -16,8 +16,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 // handle requests for static files
-app.use("/", express.static(path.join(__dirname, "../src/index.html")));
-
+app.use("/", express.static(path.resolve(__dirname, "../src/index.html")));
 app.use('/api', apiRouter)
 
 // define route handlers
