@@ -1,13 +1,10 @@
 // Import the required module
+require('dotenv').config();
 const { Pool } = require("pg");
-
-// Define the connection string for the PostgreSQL database
-const PG_URI =
-  "postgres://sopkxkah:v7gFvfH8y1xqnEOlsCNqR4pEZ_cRUTiA@mahmud.db.elephantsql.com/sopkxkah";
 
 // Create a new instance of the Pool class with the connection string
 const pool = new Pool({
-  connectionString: PG_URI,
+  connectionString: process.env.PG_URI,
 });
 
 // Export the pool object to be used in other modules
