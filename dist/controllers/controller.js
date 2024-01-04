@@ -12,7 +12,7 @@ controller.getCuisines = async (req, res, next) => {
         // const result = await db.query('SELECT user_id FROM users')
         const text = `SELECT cuisine FROM cuisines`;
         const result = await db.query(text);
-        res.locals.cuisines = result.rows[0];
+        res.locals.cuisines = result.rows;
         console.log(res.locals.cuisines)
         return next();
     } catch (err) {
