@@ -12,41 +12,13 @@ controller.getCuisines = async (req, res, next) => {
         // const result = await db.query('SELECT user_id FROM users')
         const text = `SELECT cuisine FROM cuisines`;
         const result = await db.query(text);
-        res.locals.cuisines = result.rows[0];
+        res.locals.cuisines = result.rows;
         console.log(res.locals.cuisines)
         return next();
     } catch (err) {
         console.log('error occurred in getCuisines');
         return next(err);
     } 
-}
-
-controller.getPeople = async (req,res,next) => {
-    try {
-        const text = `SELECT name FROM users`;
-        const result = await db.query(text);
-        res.locals.people = result.rows;
-        console.log(res.locals.people)
-        return next();
-    } catch(err) {
-        console.log('error on getPeople middleware');
-        return next(err);
-    }
-}
-
-
-controller.addPeople = async (req, res, next) => {
-    const { name } = req.body;
-    try {
-     const text = `INSERT INTO users (name) VALUES ($1)`
-     const params = [ name ];
-     await db.query(text, params);
-     res.locals.addPeople = 'Successfully added Person'   
-     return next();
-    } catch (err) {
-        console.log('error in addPeople middleware');
-        return next(err)
-    }
 }
 
 controller.addCuisines = async (req, res, next) => {
@@ -62,6 +34,47 @@ controller.addCuisines = async (req, res, next) => {
         return next(err)
     }
 }
+
+controller.getPeople = async (req,res,next) => {
+    try {
+        const text = `SELECT * FROM users`;
+        const result = await db.query(text);
+        res.locals.people = result.rows;
+        return next();
+    } catch(err) {
+        console.log('error on getPeople middleware');
+        return next(err);
+    }
+}
+
+controller.addPeople = async (req, res, next) => {
+    const { name } = req.body;
+    // console.log(name)
+    try {
+     const text = `INSERT INTO users (name) VALUES ($1)`
+     const params = [ name ];
+     await db.query(text, params);
+     res.locals.addPeople = 'Successfully added Person'   
+     return next();
+    } catch (err) {
+        console.log('error in addPeople middleware');
+        return next(err)
+    }
+}
+
+controller.tally = async (req, res, next) => {
+    try {
+        const text = 'SELECT cuisine, COUNT (cuisine) FROM cuisines GROUP BY cuisine'
+        const result = await db.query(text);
+        res.locals.tally = result.rows;
+        console.log(result.rows);
+        return next();
+    } catch(err) {
+        console.log('error in tally middleware');
+        return next(err);
+    }
+}
+
 
 
 

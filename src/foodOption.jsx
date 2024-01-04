@@ -26,18 +26,18 @@ export default function FoodOption(props){
         // if it was not checked, tell the parent element it is checked now
        if(e.target.checked){
         upvoteFunc(value)
-    //     try {
-    //             await fetch('http://localhost:3000/api', {
-    //             mode: 'no-cors',
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({name:'what'})
-    //         })
-    //     }catch(error) {
-    //         console.log('error')
-    //     }
+        try {
+                await fetch('http://localhost:3000/api/cuisines', {
+                mode: 'no-cors',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name:'what'})
+            })
+        }catch(error) {
+            console.log('error')
+        }
        }
    }
 
