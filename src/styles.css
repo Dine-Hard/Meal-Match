@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cute+Font');
+
 .header {
   /* background-image: url('https://media4.giphy.com/media/VD5ih6qoMsz0UsZPpF/200w.webp?cid=ecf05e47juwq1ep1ir2mo12zxbvg6ssoajfbpegv1xpicnm5&ep=v1_stickers_search&rid=200w.webp&ct=s'); */
   background-color: rgba(116, 202, 120, 0.95);
@@ -37,7 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: auto;
 }
   /* #listContainer {
     border: 1px solid rgb(255, 255, 255);
@@ -104,4 +106,45 @@ input {
   margin: 0;
   padding: 0;
   font-size: 40px;
+}
+
+.inputBoxContainer {
+  font-family: Cute Font;
+  font-size: 40px;
+}
+
+.nameInput {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cuisineButton {
+  background-color: rgba(116, 202, 120, 0.95);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cuisineButton:hover {
+  background-color: #4CAF50;
+}
+
+.dropDown {
+  background-color: #ff99cc; 
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropDown:hover, .dropDown:focus {
+  background-color: #ff66b3; 
 }

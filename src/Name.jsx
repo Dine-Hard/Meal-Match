@@ -28,18 +28,18 @@ function Name() {
 
   return (
     <div>
-      <div>
+      <div className='inputBoxContainer'>
         <label>Enter your name: </label>
-        <input type='text' name='name' value={name} onChange={handleChange}/>
+        <input className='nameInput' type='text' name='name' value={name} onChange={handleChange}/>
         <div>
           <label>Select your Cuisine: </label>
-          <select name="Cuisine">
+          <select className='dropDown' name="Cuisine">
             <option value="Italian" >Italian</option>
             <option value="Mexican" >Mexican</option>
             <option value="Thai" >Thai</option>
             <option value="Korean" >Korean</option>
           </select>
-        <button onClick={() => handleClick(name, meal)}>Submit</button>
+        <button className='cuisineButton' onClick={() => handleClick(name, meal)}>Submit</button>
         </div>
       </div>
     </div>
