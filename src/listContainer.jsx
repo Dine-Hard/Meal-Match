@@ -31,7 +31,7 @@ function ListContainer() {
     const list = [];
     options.forEach(el => {
         list.push(
-            <FoodOption key={el} value={el} currVote={vote} voteFunc={upvoteFunc}/>
+            <FoodOption key={el} value={el} currVote={vote} upvoteFunc={upvoteFunc}/>
             );
         }
     );
