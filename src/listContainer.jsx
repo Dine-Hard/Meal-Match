@@ -19,19 +19,35 @@ function ListContainer() {
         setTallyData(data);
     };
 
-    const upvoteFunc = (selection) => {
+    const upvoteFunc = async (selection) => {
+        try {
+            await fetch('http://localhost:3000/api', {
+                mode: 'no-cors',
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({name:'KingDANG'})
+            });
+            if (response.ok) {
+                console.log('added to db')
+            }
+        }catch (error){
+            console.log('Error in upvoteFunc ', error)
+        };
         setVote(selection);
         if(selection !== 'nobody yet'){
             tally[selection] = tally[selection] + 1;
             setTallyData({...tally});
-            // fetchData(); UNCOMMENT AFTER ACTUALLY BEING ABLE TO FETCH DATA
+            // fetchData(); 
+            //UNCOMMENT AFTER ACTUALLY BEING ABLE TO FETCH DATA
         };
     };
 
     const list = [];
     options.forEach(el => {
         list.push(
-            <FoodOption key={el} value={el} currVote={vote} voteFunc={upvoteFunc}/>
+            <FoodOption key={el} value={el} currVote={vote} upvoteFunc={upvoteFunc}/>
             );
         }
     );
