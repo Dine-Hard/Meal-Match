@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FoodOption(props){
     // deconctruct the props
-    const { value, voteFunc, currVote } = props;
+    const { value, upvoteFunc, currVote } = props;
 
     // declare state var to tell if this box is checked
     const [isChecked, setIsChecked] = useState(false);
@@ -21,29 +21,23 @@ export default function FoodOption(props){
 //        }
 //    }
 
-const handleCheck = async (e) => {
-    try {
-        const response = await fetch('http://localhost:3000/api', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: {
-                user_id: 5,
-                name: 'Hello'
-            }
-        });
-        if (response.ok) {
-            console.log('added to db')
-        }
-    }
-    catch(err) {
-        console.log('why')
-    }
-}
-    const handleCheck = (e) => {
+    const handleCheck = async (e) => {
        setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
        if(e.target.checked){
-        voteFunc(value)
+        upvoteFunc(value)
+    //     try {
+    //             await fetch('http://localhost:3000/api', {
+    //             mode: 'no-cors',
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({name:'what'})
+    //         })
+    //     }catch(error) {
+    //         console.log('error')
+    //     }
        }
    }
 
