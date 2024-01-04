@@ -39,13 +39,20 @@ const handleCheck = async (e) => {
         console.log('why')
     }
 }
+    const handleCheck = (e) => {
+       setIsChecked(e.target.checked);
+        // if it was not checked, tell the parent element it is checked now
+       if(e.target.checked){
+        voteFunc(value)
+       }
+   }
 
     return (
         <div className="foodOption">
             <input className="box"
                 type="checkbox"
                 key={value}
-                checked={isChecked}
+                checked={currVote === value}
                 onChange={handleCheck}
             />
                 {isChecked}
