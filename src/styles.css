@@ -148,8 +148,3 @@ input {
 .dropDown:hover, .dropDown:focus {
   background-color: #ff66b3; 
 }
-
-.dropDown option:checked {
-  background-color: #ff66b3; 
-  color: white;
-}
