@@ -4,7 +4,7 @@ import FoodOption from "./foodOption";
 
 function ListContainer() {
     const tally = {};
-    const options = ['Italian', 'Mexican', 'Thai', 'Korean'];
+    const options = ['Japanese', 'Mexican', 'Thai', 'Korean'];
 
     options.forEach(el => 
         tally[el] = 0

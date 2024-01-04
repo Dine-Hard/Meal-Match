@@ -30,7 +30,8 @@ export default function FoodOption(props){
         fetch('http://localhost:3000/api/cuisines', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cuisine: 'bellobello' }),
+        body: JSON.stringify({ cuisine: value }),
+        //value being passed in is the cuisine that the user selects from UI (ie. Japanese, Mexican, Thai, Korean, etc.)
     })
         .then((data) => data.json())
         .then((data) => console.log('data:', data))
