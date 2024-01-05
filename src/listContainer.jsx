@@ -38,7 +38,6 @@ function ListContainer(props) {
             tally[selection] = tally[selection] + 1;
             setTallyData({...tally});
             fetchData(); 
-            //UNCOMMENT AFTER ACTUALLY BEING ABLE TO FETCH DATA
         };
     };
 
@@ -49,20 +48,6 @@ function ListContainer(props) {
             );
         }
     );
-
-    // useEffect( (option) => {
-    //     fetch('http://localhost:3000/api/tally')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             for (let i = 0; i< data.length; i++) {
-    //                 if (data[i].cuisine_choice == option) {
-    //                     setCount(data[i].count)
-    //                 }
-    //             }
-    //             console.log(data)
-    //         })
-    // })
-
 
     return (
             <div>
