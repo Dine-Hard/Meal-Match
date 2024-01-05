@@ -57,7 +57,7 @@ controller.addPeople = async (req, res, next) => {
      const params = [ name ];
      await db.query(text, params);
      const data = await db.query(`SELECT user_id FROM users WHERE name=$1`, params)
-     res.locals.addPeople = data.rows[0].user_id
+     res.locals.addPeople = data.rows[0].user_id;
      console.log(res.locals.addPeople)  
      return next();
     } catch (err) {

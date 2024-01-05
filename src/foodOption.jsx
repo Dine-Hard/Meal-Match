@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function FoodOption(props){
     // deconctruct the props
@@ -7,7 +7,7 @@ export default function FoodOption(props){
     // declare state var to tell if this box is checked
     const [isChecked, setIsChecked] = useState(false);
 
-    const [ addTally, setTally ] = useState([]);
+    const [ addTally, setTally ] = useState('');
 
     // event handler for when a box is checked
         // update isChecked value
@@ -21,7 +21,7 @@ export default function FoodOption(props){
 //        }
 //    }
 
-
+  
     const handleCheck = (e) => {
        setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
@@ -40,6 +40,8 @@ export default function FoodOption(props){
         console.log('error when posting cuisine to db', error);
         });
     };
+
+
 
 // =======
 //     const handleCheck = async (e) => {
@@ -72,11 +74,11 @@ export default function FoodOption(props){
                 checked={currVote === value}
                 onChange={handleCheck}
             />
-                {isChecked}
+                
                 {value}
 {/* 
             <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5> */}
-
+                
             </div>
     )
 }
